@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing Data Products - Slidify Project</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products - Slidify Project">
+  <meta name="author" content="SebastiÃ¡n Fuenzalida GarcÃ©s">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/slides" 
+    src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products - Slidify Project</h1>
+    <h2>USA arrests in 1973 by States</h2>
+    <p>SebastiÃ¡n Fuenzalida GarcÃ©s<br/>September 27, 2015</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What does the application do?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The application allows you to do an Exploratory Data Analysis to the &quot;USArrests&quot; dataset focused in:  </p>
+
+<ol>
+<li>Maps: Graphic Map with the number of arrests in 1973 for Murder, Assault and Rape by State and the urban population in that year<br></li>
+<li>Compare: Barplots that compare differente zones of USA like North vs South or West vs Central, to check the states or zones with more arrests<br></li>
+<li>DataSet: You can check the complete dataset<br></li>
+</ol>
+
+<p>You can try the application <a href="https://sfuenza.shinyapps.io/Developing-Data-Product---Project">here</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Data Set</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The original USArrests dataset consists in 5 columns and 50 rows one for each state:</p>
+
+<pre><code>##            Murder Assault UrbanPop Rape
+## Alabama      13.2     236       58 21.2
+## Alaska       10.0     263       48 44.5
+## Arizona       8.1     294       80 31.0
+## Arkansas      8.8     190       50 19.5
+## California    9.0     276       91 40.6
+## Colorado      7.9     204       78 38.7
+</code></pre>
+
+<p>For the analysis a couple of changes were done:</p>
+
+<ul>
+<li>All the names of the states were change to lowercase to use a map of states data set that allows us to draw USA and Alaska was erase because it wasn&#39;t in the graphic map</li>
+<li>Two new columns were included:
+
+<ul>
+<li>North_South: Indicates if the State is in the North or South of USA</li>
+<li>West_Central_East: Indicates if the State is in the West, Central or East of USA</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How it works?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>When you enter to the app you have 3 sections:</p>
+
+<ul>
+<li>Upper Navigation: Allows you to switch between the analyze section to the information to know a little bit more of the app</li>
+<li>Left Panel: Here you can select the States that are going to be included in the graphics and the dataset</li>
+<li>Main Panel: Here is where the graphics and the dataset are shown, you can switch between:
+
+<ul>
+<li>Maps: States Map comparison</li>
+<li>Compare: Comparison between zones and states with barplots</li>
+<li>Data Set: The complete data set as a table to check it</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here you can see an example of the graphic map of USA:</p>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAB9VBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrY6AAA6ADo6AGY6OgA6Ojo6OpA6ZmY6ZrY6kJA6kNtmAABmADpmAGZmOgBmOjpmOpBmZjpmkJBmtrZmtttmtv9/f3+QOgCQOjqQOmaQZgCQkGaQkLaQtpCQ27aQ29uQ2/+2ZgC225C2/7a2/9u2//++vr7bkDrbkJDbtmbb25Db29vb/7bb/9vb///l5eX/AAD/HAD/HgD/JAD/KgD/LwD/NwD/OQD/PAD/QAD/RAD/SAD/SwD/UAD/UwD/VgD/WgD/XQD/YAD/ZAD/ZwD/agD/bQD/cAD/cgD/dAD/dgD/eAD/ewD/fAD/fQD/fwD/ggD/hQD/hgD/iAD/iQD/igD/jAD/jwD/kQD/kgD/lQD/lwD/mQD/mgD/nAD/ngD/oAD/owD/pQD/qAD/qQD/qgD/rAD/rQD/rgD/sAD/swD/tQD/tgD/tmb/twD/uAD/uQD/uwD/vAD/vQD/vwD/wAD/wgD/xAD/xQD/xwD/yQD/ywD/zgD/0AD/0gD/1AD/1wD/2AD/2QD/2wD/25D/29v/3AD/3QD/3gD/3wD/4gD/4wD/5AD/5QD/5gD/6AD/6gD/6wD/7QD/7wD/8AD/8QD/8wD/9QD/+AD/+gD//AD//QD//wD//7b//9v////kBsbwAAAACXBIWXMAAAsSAAALEgHS3X78AAAdN0lEQVR4nO3diYMcx1UG8JGIWElYhJEUQ2AiGcfxjs3WQICVORNijnBFGBCHMIcBAQJxa8xtYgMJCcOZABZY3Lv9d9J1dXe9quqq6q4+Zt77Eq92Z2e7Z+o3r6r6mJ5FQUGZxdQPgDJNCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pCB5pJoLfLo6mWTFFZRr4s+tffX01yZopKtPA/+1pUXxjz2X0/XvkGRH+7Pqy/Lq7elJ+3SxEwW8XC1D45S3LmIWd3zLv5vq7s+sXT8RdxT8gW8eNZzeO7R/FA14vFmpw2lSPGNxbrGklVivuWz4inlV562KGA9uo8BeOVTueXX/mUln0Z195ev6c2f7ryCaC8K6/O7vxZRxi98zVSHjr7zU8X/r5raOieuSex8RfFPx+8r78YZV3Xh9Zj3YGGRP+xvNHCn578aUrxwY8LwveSIuFBNldltVy+/nFhRf5l2N1j7Lk1A9H8lvx5+Lv1D3E3xxXKyw2H7x6csanFKW1/F1ZkxeeL9dj/8Hx2Y0XLuuFVvDyG/FSUY+8sO9dPpr3fWCl7raTd+Lfi2833lfLVBkV/sXbx6rnXMoaqLp6USKqPMR9OdSaW3IY+WUp2o+3JRcsf1Tfij9YH1XLEHeXK/zIzVL3uZca8HpRfBjQi2z8wbEYHtby5wq+KuD6kdv3Lr7+RHT1wlisry507BV/vHu/gOdFsDG6WjUArIwuW/nKZhPCZcsqaQ2vU/6dXkZTZr0qdu/fNeGXVeme6EWalKtqGKi7ej5sC97mIwf3LtQYLyv+8qqoflN2LLMr+JHhi/WKtyMvijNje27LW4YDVPC8rS/KGpKFJOdKS949r+R91bci5d/pZcgpllzhZllslga8rsnyxnqR9R+44eXjOSqMR+6BP7vOOx79GPXzC88oRs7I8LtrH+UKosGbVQDhy7ssK6haS2YtBvml/lbe5obfXfvm28deeLXIKHhR7cYj98CLl+zX8O92ejbQWMVsMjJ8sS5nWrKltheO69/Brl4gGvDNmhG6S/2t+Nfo6mvH89svXDuF8EZXX/jh5e1bOa8QizYeuQ++ej7iSchfn81uf9XY8Hw6JHGNCQ+c3Inp8GVe2BpezMDKJlcTZT3G66oyJne1YzlCLPX0jG/Pq0UdqcmdXKQPXozmckwRmxPgkXvg+SOS99D3XunXwJwyNnzZfHp7yJje6Y01Pcbz7bOXVfVKGH4PXmprsZ1Xih7pb8X9j6plGPCcQU3PLrxw9aRaVLU5d+HYW/FyXUv9zaXTnfHIfRW/rf5Id0oL3JM7ypxC8EhD8EiTAv8hyqSZDj5pyXfSHki2TLXewVdM8PNcL8GrEHzmjAW/Ftu41T7R5DUTfOaMBH9+WxyDvnRa73Qi+ElXPBL82bOX+akOy+LsJt8xxY9NfOgOZcKMBM93RG5Wm1VRnxxFFT/pikec3G2XVcWnr5ngM2esiuenJa1ojJ/Pikec1S8LmtXPZ8W0Hd9jvYyxaVacIQTfY71sQHmCl5kn/LvvErwIwY+z4gyZKTzbjxC8Skb4vwuFPSnDPp0p7P8iU2I3Q/AiueBZhPxU8Kb8YLM7lPBlJ1rsCTynFw+XZX4JYIWfb8W/64gc7rPSY4Kv2i0GXrjPBb7iz9GIMojgjd4yKD9DeNnt52jHAhV8OayL0VJ8u6/wcraXwR8RvKSuN5JnCt8qr6peTfn66COCb0zkI+QVfC75aPj2ks/X86OCN+VjKj5byQ8F37kpMcHXJR/d1WeTj4ePle85zhN8CD6PfG743tM7VPBanon5/T5XPM3q09Zcwe95xUP3DlP8vvChFe49fCb5zPDwed27l9oF9IRnT5+yVv15wSv5+F222Xr7rPBWvd9L7/ozwLPyy1PfmucGzzR8wL0Jn0M+I7zdz3dw7wnPyVX2BV7Kh9gBfH/5fPByn23zGZX9/NgV34D3yM8OPkxuw2co+QT4Vnm9q56pp8PZBXyqfS/4pvu+wHeSZ71rPhO8OiXjiVQW6AJefIHPtLV5+sAb7vsCH+sOSr4vfTZ4xtTjKVjlrvSZfo6iIyD4ZrrC9x7nc8HrR8Mf0L17UL75cgj0/ATvcwfwPcf5zPDypQjlhb3xOvDr94BnewkfO8pD+J6DfAp8izwcf2x68ELwNk93eOC+H/BFzE47d1c/P3g192iF98qjg/8MT4z8HOGt8cdnL29kLfI94J/uMbxDnlnJCp8UH7vDXdEre8b/p8Z21rp1j7PirZIXTfQZMwwMqP3g/yEhPngnu3541XyuPou8rXmyVbznpTVreDncu9Bt+dK9D30KvLfgW+EZnMi378LpDG8V/H7Bi3Mx5Dcuc3Uvo+B77cNJgPf39C3w5SMUc/ime+s+/K7w0F0cpYtu/q7JBs9V/eC2uyipPuN8hopv7epFX28A6M7f0zyd4aG7p+bnCx+O1dAjwftqPgDPgDurJviuhugGz+yCnxx+s9RXtG1bcy/4HvJJ8J6aD3T1Yn+tfprNTbxc8GIGYbtPDL9dLNUVbVvXnADv3GaeMzwY4Nv34nSCf+pyd4/yY8Hvrn3DUl3Rtmi7lm0/eFjyCZvmI8DfKf8vnyQD8MlXonU/h6ce+KeONYx1EeObJ9uluqKtummIirfg/zg2I8AXxnHZPhVf/vnrOuy9Km3w1jJGghcfvCo+OG2rPxjQfZAmnt3ZzM1NOr6FNx/4xia82I4LHappga/VDXhxaqUb3rH3brzJHa94cUXbtjUnwPsaeEL4Fnmxtameo32g3tES6fDeinduN4wKr65o27LmDPAldz22jwrv3VkvHtaTJ3XB94Fnhnuz4iG8OMX6qed4wMy246Ph/cUlznjT344LHyp69Rx7wr/uhmewq9cv/oTm75wR4VvkG9+ODd820Ffb8PYxWkdL+OCBewUvt+AhvP9IkNn8/COX5Zdm4j+1ejz4NvkO7hnhW3p7+RQhfMqeO8a88E8t+KLtKBCAv/JVy2Lz5Vf2AL6ls58U3i/v6+nd73HzwbcWfAO+/difDf/8UbH+4BX+uer8k+0Xi4tfd2vxJZdXclrGfz7xLEhkZvBTdPVeeU9PL/fk2mUfC8+aBV/B+8d2d/Pvrnzk5ss3X6rhV/zTzXeXV5vq59YQvH+c98Grzr8j/OsO+JYpna/5d1devP3CtY9W8OVgv7l0Wn63FjtgtmDwtzIz+Em6+mR45nifTSo8a8DrS8alNP/uyvH6maPya0lc1rmAlxUvPkNocPh+x+b2El7vxIuDtyf1rFnwGj65+Tn5YlV+PbvOR3YOfS7G+PLr4tIpwSv3UFLgPdvyLnh7Tl9VfBO+c/N3T9+LH+0L/HvtcZ9lrZ+kGx7K39FNUo/YDnYHfOS7cucFn+A+5eSOBeX9BR9b8hJeU0t+h7uEj9+Ka2v+HkECHyp5Z8XXzzIe3m3dDt+9+Xtkj+HD6Vnx9dk3HSp+aPhvgUmA5Ol7SdMJ4T8fSimv/UPuLvgn3eCD8iZ8/GU35gQ/acUH4Ut5Jr9GwLf19ZnhG2dexey4cTc/wcck2NM75d0nWlbskCx6jP9cFcb4f52a/1thEiB5sMDHyFupnqWz3l3b8RHuTXhh3w3+22ASIHlwwJf0QfiS/g0zrfDOo3MR7MD9c/FX1jKb/9thEiB5CD4M77xCit0Wd2LK3YbvOMZ/B0wCJM/M9twNBx8lz9zw4Ymd3GEX4w7hRc132Ff/nTAJkDy999XnzkDwUSUPa17td43p6Bl76622p9WAN6LgY+TN5v84TAIkT2/4h76wHw+G/bOV4eA7dPbymofOS2GZjcC4e1ua76f4og77wheY6uzT4b8LRt58dvPEfMOjL/0rfk/gY0reGuSZt0szmuDNN98MwDfkTXixPcc6VPwnYMStW37ClfGGR1/6n4hxOPDMhi/zB41wYh5WnzrB5G0h+Le88NYLKbr5X62jbjn/8PlzJ/UbHttC8H73Nwz0JryyF93Bmz3gBXm3rv67YeTNHN54w6Mvk8I75IeDb5fnBNA9BM+aP4bgq86+Aa/cO8F/D4y8mcPzVG949IXg3cN7EB4kAv4x0/DGTIF1m9V/L4y8WVR88w2PvgD481uLS990wzM3OGh4l3xOeMYeP+ZFr8A7fAKG2fzfB6MAnzsx3/Doiwl/fmu5u3a6Fedphtaskhu+W3rDO0s+Izx3f8zp5bQwekbnbf5PwqQtDMCXW4ElvNgWDK5ZJTO88SL43dj0hx+64hvwji3CqJjN//0wiUtzVfwmoeJ77cCZE/zAY7x05/BVb58as/l/ACZxafYYz8/KjlmziH//zQzhvXnPNaVPgg/tuXsLFHyikqP5fxAmcWl9D9J43ecH/3nfg/Ww54Vn2j0RyNf8PwSTuDRU8P75yODwsuR7fYCt2fw/DJO4tCb82fWFjHqDrbzAYb27f8+7en/JjwIv5RN5mjGb/1MwiUsDFb/m238buaOXX+Cw3LKrN+6yH6QZG94n73HPCq86+0SeZszmvwuTuDRrc676Ki5wWBa9/Ml7gUOv/Kjw0Rmm4tk7cZtzHS6M6LvA4Y/A9IIvN+fKr2JzTl7gcLOq9v56L3A4B/jo66C66QeG56+4x5nH+B+FSVyaa3NO9PTyAodVxdtrruKrojnCf3ow+EAe54b/MZjEpYUucBga44t9g0/p62PhGXtHht2/f5/dF9L3q9TuvYZ40PxWWyYuLXyBw9ZZPc9BwPfZgVO5v6PQmXwJ1O4sgzto/p+ASVwamNxdb27Ota+5yl7BJ8nHwEtnDS/RxX9Nd9Z/Kx42/0/CJC7NVfEbzzG9w4D3TkY7wTfU35Hk5ddHVWcv/mVvC/qe7qD5fwomcWku+KSjc/sG75WPgOd+1rTODnv06FGJrwu+hH+7385aV/P/NEzi0lzw27G6+nb3geD987vgOXeMPXjAzHq34Rl35xFFzwoJ3+XMi9bm/xmYxKU5x3jPaTs+eHdL7h08sw7WOOHBeXe2u4Z/xORc777q6xNlAs3/szCJS+v/KVSFr+ZZkH5W8A/tGZ5xbrV4YTzg8rzDF52+q94fVe5N+Lf7u4Pm/zmYxKX5d9mG1tyId9jcN/i2rp6jy8iXgNAH6nJ8r92r2V1++J+HaQiuw2+kcR+dSznnTqSj/MzhQcE/ALH7edbo50v4+1XF5+jpQfP/Aoy4VbyTxtjr5our4uPWbKSb/Mzg09wf2MP7o0Y/LyZ39V68/u528/9iHXWLfCeNsZ/dlyxjfCGGefde8B7yo8ODd0nX6C53C75Z7TW9rvmEdo5q/l+CkTcL+OaRNV+Mrv7my1323ImUJe8+8tUqPy94U54Z8La7DQ/dJXwh6z7oGozZ/L8MI28ev+K9B7vb5GcGb8g3Dq09cBU8lLcLvoR/pN9hl9DMcc3/KzDyZvFOmq5jfPKsXsQH3yI/szH+oXHeZSXuRJezu3Z3KT8Q/K/CyJvVO2nGmtWLpMvPD75R9F5vt7zLXXT2zo8x6RKz+X8NJnFpmWb1PN7O3rsrZ5bwb6TAs1DF67fDZojZ/NYDT1xarjG+4BP71DMv5wiv5Jl7WHeXPDM34EeB/3WYxKUB+E3XWX3Reo69R36O8LyrZ29EspeyfvV6Vp9o4onZ/L8Bk7g00NXfON4e6dOrA2u20nKO/UNPdz+3Wb2seL1XPtjPK1u3eg2fSOKL2fy/CZO4NGuMl/+PWLMd7xjvLXo2SQLw8hhcGN7rDSd3mWI2/2/BJC4NnF59+7j8/+5qN/hkefbbrWHWyQZ22J8mJwBfPs6obj4KXo7yeWI2/+/AJC4NjPGl+dZ7OYWIj0jAAh/JLu0TSXwxm98a7hKXlnFWX4SGeUt+jvB820TXdGSCRZ9oEtX8vweTuLQM59w1Eiomlh/eThC+dfivv7felugKY3fvBl8ZiSaemM3/+zCJSxsXHsjngH8NJgxvbQJX4fBR3jW89ebFZvjL4u4w8Nb5volLywsf6uuB/NzgxSHGjO4cfqiK/0OYxKVlho+vedEHzg3+YQq8eAYh+Ix9vdn8fwSTuLTc8NHyJfrc4BOGdsnert6QT0Rxx2z+P4FJXFrbFTHa1+xJsLPX+/AC6pOM8SV+tHtYvWGfqBLR/H8Gk7i0vJtzPGF5WfSzhI+ey0e75xvkzea33oSfuLT88LHy84TPys7uqq29RJSY5v9zmMSlDQAfKT8ZfOsgH+OeVOzZJvWg+d+GSVyaH34t3krV/JSLjPCl/AzhYwo+pZfPN77bzW+9hydxaV747RGf3RufchH9ccZR8vsKD+vZP70XW/GJHi0xm/8vYMStMZ9GI9PW1fMjtPpTLrxXvXImAv7hDOGD+16NVNeN9snLu/W4zlXbVa/+EobfGPVpNEH4Nb/OXfNTLuI/wHw/4Rn7WCOg+tkrRphxyXBf75+zp7eb/6/qqFuiPo1GpnVyJy+NUX3KRWb4oPzI8KZ7O7zp/klXl593Zmc1v/VxjvzGqE+jkfGP8fzzLZbGp1wkwGcp+Y7wIfm4gg/AA3lH5WdFt5v/szD6F8FPo5FpndUfmZ9yEQ+vP62tn3w3+Nf4ijvBfywe/hXmpmdN+PjmiorZ/H8Nw2+M+jQamSG242XuhAt/kH31QflOPb0lD3t7IJ+dHTa/dZ1ecWvMp9HIDAofPPF2GHhl7/N3w7P2go+F1/L53UHz/w1M4tKGhW95L+VgY7xhHw0P3cPwrfIDFDxo/r+HSVzawPA8E8E3C1+8AvR32eB98nkn81XM5v9HmMSljQHve//08PCvsQZ+9VqIcY+A98gPo17A5v8nmMSljQBfeMb6MeAltXwFNHuBDvCR8kOxw+b/Ikzi0saBd8kPtecu5pWQCd4hP5w7aP5/gUlc2kjwtvxgB2mi6DPBW/IDuoPm/1eYxKWNBW/Jzwse7r2Jhbf33Sa1UVLM5n8XJnFpo8HDyT0bal/9qBUPSn6wiR2P2fz/BpO4tMngx5vcueDtQPdIeKPmh2SHzf/vMIlLmw5+0op/FSa4Gc/PvWmHH7TcC9j8T2ESlzYivPHGtIiefm7wnpJno5R7AZv/P2ASlzYePLgWzD7Ce0Z5JsvdesKZYzb/f8IkLm1EeJgg/ajwoWM0raO8eE2PC/9fMIlLmxA+SD8ivDW7S4WPe8K9Yjb/f8MkLm1SeNH97w+8Z3b3ijooMy78/8AkLm1i+KLN3oR3bILVh15S4aF8+OCcv+C5fMoT7hqz+f8XJnFp08MX3i6fAe9OxlElH7P/xg+vJq0EL5PUDs7NOwnfuE9GeJYTvsMT7pC05g9lJvA8Fj2AzylvwtvuKfCM4I10aAde9tXOnfKr6OmN3+eTJ/ih1tytHVQjynmytRM0n7xR8rZ7yp47/RgJXmaQdsgonwm+fm0SvMww7ZBN3oC3j9IJeGvbsWVqR/A6A7VDLnl7r61R/KxU/5S1te+od4KHGawdstD73E14a3MfVD5jjLp6mOHaIYe8B96seNHXc2/79aFTfj/8E5Yh+GIo+NLRs2PY1z8cIry+Bk59aY3ZwGeQd1Fq5aJ6t69G9dmLGw9sc05eA8f47LrDhy+MQdtYo5a3XwIHBl+Ia+BUn1aZdg2codMb3tN5i8p2X7ZG/gXjv4RTvpGe9Gjw/Bo4xufTzqjimYHIj9xFvxZY9TdMD+yA3rfOV6uB4MArvtgsjc+nnQ98s69nuoeOLHX1PspCdd9w7uY9Z7IxCsDXyghPuBhvjJfXwJnnGN8o+cYELBKeNY/0MvUZoNVkLepcWSAvbzwQ+OoaOHOc1Rd1zacer/fN3XS37+3qXfc/SPi+ax66HVTnnna8PjSC+6f18P4E78vQ7SChGbwhAN+yMPlf5EfBGhODKU696pt9hnccr+/UzwcW6r0fwTszAryV1pKPFY1eGSh5gpeZAt5X8uYO2FzrInhnpoF3yg/BTvC+TALvLvlh3AnenYngXVc1HuQNzNYGHcHLTAPvkB8KHsoTvMxE8FB+IHawJf/q6G+T7pvDg79D8DE5RHgoP9CK4EE9gpeZDL45tecH6odaETwqT/Ays4AfrqcneF+mhGejwIPTMQheZh7www3xVskTvMyE8EZfP9yazJO2CF5lSvjm9G7AVcWdrJcrBB+xXjZGVw86e4KXmRbePhlziFBX78ik8PqMvIH7euM0HIKXmRZeTr0GL/mC4K1MDV+o0+YHLnmCh5kBPM+Ae3DU4gnezEzgB0/1XgyCl8ECr3p72levgweeHRT8+a3F4tIpfwdd9eY5gndHvePuQOC3/B2Tq/Pbx/VNBO+OOon3QOB5NquzZy/z98zO7YoYKDMefFn024sn/KoYMlTxk654vEuhHMl/+SUSOqyZ4DNntMkdL3RxXQyq+FmseCT4NR/Vl/wfXfAEP+2KaTt+nusleBWCz5wJ4ZOySLt7tky13uFXPBn8XJY8z/VOt+JOIfj9X3GnEPz+r7hT9uvRUrKF4JGG4JGG4JGG4JFmCHh+hfvqBJ4Lx+E/yLhetcZR11tMtdY+GQB+u7h4ok7gMS53P3TkesUaR10vX/Uka+2V/PDnH9YfZrJZGR9wMXDkeuUax1wvz+7aaflKH3utvTJEV6/geVM0P9Jm8Ah4scZx11vw3qYs9dHX2ieZ4df8DD357PkJPKPVQLXeCSq+XPfmqNhdHb2f6ZWhKl6dwDPqqMfXO81oK8mRj/ESoDqBZ8R5ruhpJplf822YFfpZPWUfQvBIQ/BIQ/BIQ/BIc2Dw5dZ02+/MX8tNTqRBBG/9muAPJ1r27Do/YrO79rVi+7r86X3PHu+uvlze+lJ5D34vftsHVuqOCHOg8Osl34e3uyz+ET9dOJZd/U7B89vKF0X5z+Zo4gc9SQ4Tnu8yP7txrJDF+QG3TXh5zsCqvNMe7V/PmcOE5/9IajGlu3ZqwYs7rldlT7/Yo/2sGXOY8PEVj7LaeQ4TXo/xjfFcj/G8c99cbI7x+3NELWcODf4yPyp4pGf19Qz+S0XFn9+6eLJZLL5CnhSoZvUoe/pDg/cmsIGPLxjg+dFynGXdEgzwFEcIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmkIHmn+H2McD1gEt4u8AAAAAElFTkSuQmCC" title="plot of chunk load_map" alt="plot of chunk load_map" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What does the application do?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The Data Set'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How it works?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Example'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
